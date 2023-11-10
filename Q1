@@ -1,0 +1,30 @@
+package assessment;
+public class JumbledNumber {
+    public static boolean isJumbled(int number) {
+        int a = -1;
+        int b;
+        int n;
+        while (n > 0) {
+        b = n % 10;
+            n= Math.abs(b - a);
+
+            if (n> 1) {
+                return false;
+            }
+
+            a = b;
+            number /= 10;
+        }
+
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int input = 8987;
+
+        if (isJumbled(input)) {
+            System.out.println("Valid");
+        } else {
+            System.out.println("Invalid");
+        }
+    }
